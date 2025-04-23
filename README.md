@@ -8,7 +8,7 @@
 ```mermaid
 graph TD
     A[GetEntityList] --> B{entitylistbase?}
-    B -->|Null| C[安全终止]
+    B -->|Null| C[continue]
     B -->|Valid| D{localplayer_pawn}
     D -->|Invalid| C
     D -->|Valid| E{localplayer_team?}
