@@ -1,15 +1,8 @@
-﻿#include <Windows.h>
+#include <Windows.h>
 #include <iostream>
 #include "client_dll.hpp"
 #include "offsets.hpp"
 #include "buttons.hpp"
-#include <random>   // 更现代的随机数库
-
-std::random_device rd;
-std::mt19937 gen(rd());
-std::uniform_int_distribution<> dis(0, 99); // 0-99共100个数
-INPUT inputs[2] = { 0 };
-
 
 uintptr_t GetBaseEntityFromHandle(uint32_t uHandle, uintptr_t client) {
 	auto entListBase = *reinterpret_cast<std::uintptr_t*>(client + cs2_dumper::offsets::client_dll::dwEntityList);
@@ -86,7 +79,7 @@ static DWORD Main(void*) {
 				continue;
 			}
 
-			if ((GetAsyncKeyState(VK_XBUTTON1) & 0x8000))
+			if ((GetAsyncKeyState(VK_XBUTTON1) & 0x8000))//mouse4
 			{
 				auto set_force_attack = reinterpret_cast<int*>(client + cs2_dumper::buttons::attack);
 				std::cout << "player_health" << localplayer_health << std::endl;
@@ -95,14 +88,14 @@ static DWORD Main(void*) {
 				*set_force_attack = 65537;
 				Sleep(20);
 				*set_force_attack = 256;
-				Sleep(15);
+				Sleep(40);
 			}
 		}
 	}
 	return 1;
 }
 
-BOOL WINAPI DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
+BOOL WINAPI DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)//cmd
 {
 	if (ul_reason_for_call == 1)
 	{
