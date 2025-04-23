@@ -1,9 +1,10 @@
 # CS2 TriggerBot
 
-[![GitHub license](https://img.shields.io/badge/license-AGPLv3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-![Compatibility](https://img.shields.io/badge/CS2_Version-2024.02.1-brightgreen)
+[Cs2 Dumper](https://github.com/a2x/cs2-dumper)
 
 # The most basic TriggerBot
+
+If the game is updated, replace "client_dll.hpp" and "offsets.hpp"
 
 ```mermaid
 graph TD
