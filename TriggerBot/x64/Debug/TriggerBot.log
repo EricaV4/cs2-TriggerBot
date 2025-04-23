@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  dllmain.cpp
+  Vector.cpp
+  正在生成代码...
+C:\Users\Administrator\source\repos\TriggerBot\TriggerBot\dllmain.cpp(35,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+C:\Users\Administrator\source\repos\TriggerBot\TriggerBot\Vector.cpp(120,1): error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
